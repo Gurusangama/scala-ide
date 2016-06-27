@@ -1,0 +1,57 @@
+package pack1
+
+object Class1
+{
+  var li:List[Int]=List(2,4,5,6,7,19,23,25,29,34,45);
+  var a:Int=26;
+  def main(args:Array[String])
+  {
+    var c=new Class2;
+    c.search(a, li)
+  }
+}
+class Class2
+{
+    var li2:List[Int]=null;
+    var li3:List[Int]=null;
+    var b:Int=0;
+    var c:Int=0;
+    
+      def search(a:Int,li:List[Int])
+      {
+      try
+      {
+       b=li.length;
+       if(b%2==0)
+       {
+       c=b/2;
+       }
+       else
+       {
+       c=b/2+1;
+       }
+    
+       var(li2,li3)=li.splitAt(c);
+       if(a>li(c))
+       {
+       search(a,li3);
+       }
+       else if(a==li(c))
+       {
+       println("found");
+       
+       }
+     
+       else
+       {
+       search(a,li2);
+       }
+       }
+      catch
+      {
+      case e:Exception=>println("not found");
+      }
+      }
+ 
+    
+}
